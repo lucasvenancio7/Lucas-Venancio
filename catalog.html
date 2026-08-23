@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Realmed | Catálogo de Produtos</title>
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --border: #e2e6ec;
+    --text: #1a2233;
+    --muted: #5b6478;
+    --accent: #0b3d91;
+    --accent-2: #1e6fd9;
+    --shadow: 0 6px 20px rgba(20, 30, 60, 0.07);
+    --img-box: #f8fafc;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  header.brand {
+    background: linear-gradient(135deg, #0b3d91 0%, #123a70 55%, #081f45 100%);
+    color: #fff;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+
+  header.brand .logo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  header.brand .logo span { color: #7fc4ff; }
+
+  header.brand .tagline {
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #d7e6ff;
+    letter-spacing: 0.5px;
+  }
+
+  header.brand .legal {
+    margin-top: 18px;
+    font-size: 0.78rem;
+    color: #9fb8e0;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  .catalog-title {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .catalog-title h2 {
+    font-size: 1.6rem;
+    margin: 0 0 6px;
+    color: var(--accent);
+  }
+
+  .catalog-title p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(20, 30, 60, 0.12);
+  }
+
+  .card .img-box {
+    background: var(--img-box);
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card .img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .card .img-box .placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    color: #b9c2d1;
+    font-size: 0.78rem;
+    text-align: center;
+    border: 1px dashed #cfd6e2;
+    border-radius: 10px;
+  }
+
+  .card .body {
+    padding: 18px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card .category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-2);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .card h3 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+    color: var(--text);
+  }
+
+  .card .subtitle {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .card .desc {
+    font-size: 0.88rem;
+    color: #3a4356;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    flex: 1;
+  }
+
+  .card .specs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    color: var(--muted);
+  }
+
+  .card .specs strong {
+    color: var(--text);
+  }
+
+  footer {
+    text-align: center;
+    padding: 28px 16px 40px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<header class="brand">
+  <p class="logo">REAL<span>MED</span></p>
+  <p class="tagline">Suplementos alimentares de alta performance</p>
+  <p class="legal">Realmed Distribuidora e Comercial Online Ltda &nbsp;|&nbsp; CNPJ 50.689.350/0001-85</p>
+</header>
+
+<main>
+  <div class="catalog-title">
+    <h2>Catálogo de Produtos</h2>
+    <p>Linha completa de suplementos em cápsulas — qualidade e originalidade em cada rótulo.</p>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  <p><strong>Realmed Distribuidora e Comercial Online Ltda</strong> — CNPJ 50.689.350/0001-85</p>
+  <p>Catálogo gerado para uso comercial. Consulte um profissional de saúde antes do consumo de qualquer suplemento.</p>
+</footer>
+
+<script>
+  // Cada produto referencia uma imagem em assets/products/<arquivo>.
+  // Basta colocar a foto real do rótulo nesse caminho que ela substitui
+  // automaticamente o placeholder tracejado, sem precisar mexer no layout.
+  const products = [
+    {
+      image: "assets/products/mag-6.jpg",
+      category: "Mineral | Magnésio",
+      name: "MAG-6",
+      subtitle: "6 Magnésios combinados",
+      description: "Suplemento alimentar com seis fontes distintas de magnésio, formulado para melhor absorção e suporte à função muscular, nervosa e ao equilíbrio eletrolítico do organismo.",
+      contains: "60 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/oleo-abobora.jpg",
+      category: "Óleo Vegetal",
+      name: "Óleo de Semente de Abóbora",
+      subtitle: "Extraído a frio",
+      description: "Rico em ácidos graxos essenciais, zinco e antioxidantes naturais, contribuindo para a saúde da próstata, do trato urinário e do equilíbrio hormonal.",
+      contains: "60 cápsulas",
+      dose: "1 g"
+    },
+    {
+      image: "assets/products/oleo-alho.jpg",
+      category: "Óleo Vegetal",
+      name: "Óleo de Alho",
+      subtitle: "Concentrado natural",
+      description: "Concentrado de alho em cápsulas, tradicionalmente utilizado para apoiar a saúde cardiovascular e o sistema imunológico, sem o odor característico do alho in natura.",
+      contains: "60 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/vitamina-b12.jpg",
+      category: "Vitamina",
+      name: "Vitamina B12",
+      subtitle: "Metilcobalamina — 414% VD",
+      description: "Forma ativa de vitamina B12 (metilcobalamina), essencial para a produção de energia, a saúde neurológica e a formação de glóbulos vermelhos.",
+      contains: "60 cápsulas",
+      dose: "350 mg"
+    },
+    {
+      image: "assets/products/carvao-beterraba.jpg",
+      category: "Detox | Extrato Seco",
+      name: "Carvão Vegetal Ativado + Beterraba",
+      subtitle: "Extrato seco",
+      description: "Combinação de carvão vegetal ativado com extrato seco de beterraba, formulada para apoiar processos de desintoxicação natural e o bem-estar digestivo.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    }
+  ];
+
+  const grid = document.getElementById("grid");
+
+  function renderProduct(p) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="img-box">
+        <img src="${p.image}" alt="${p.name}"
+             onerror="this.replaceWith(Object.assign(document.createElement('div'), {
+                className: 'placeholder',
+                innerHTML: '<span>📦</span><span>Imagem em breve<br>${p.image}</span>'
+             }))">
+      </div>
+      <div class="body">
+        <div class="category">${p.category}</div>
+        <h3>${p.name}</h3>
+        <div class="subtitle">${p.subtitle}</div>
+        <div class="desc">${p.description}</div>
+        <div class="specs">
+          <span>Contém: <strong>${p.contains}</strong></span>
+          <span>Dose: <strong>${p.dose}</strong></span>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  }
+
+  products.forEach(renderProduct);
+</script>
+
+</body>
+</html>
