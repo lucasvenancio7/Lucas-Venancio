@@ -12,38 +12,101 @@
     --text: #1a2233;
     --muted: #5b6478;
     --accent: #0b3d91;
-    --accent-2: #1e6fd9;
+    --accent-2: #c9a24a;
     --shadow: 0 6px 20px rgba(20, 30, 60, 0.07);
     --img-box: #f8fafc;
   }
 
   * { box-sizing: border-box; }
 
-  body {
+  html, body {
     margin: 0;
+    min-height: 100%;
+  }
+
+  body {
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
+    position: relative;
+  }
+
+  /* Marca d'água do catálogo: logo fixo, em baixa opacidade, atrás de todo o conteúdo */
+  .watermark {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .watermark img {
+    width: 60vw;
+    max-width: 720px;
+    opacity: 0.05;
+    filter: grayscale(1);
+  }
+
+  .watermark .fallback {
+    font-size: 14vw;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: var(--accent);
+    opacity: 0.045;
+    white-space: nowrap;
+  }
+
+  header.brand, main, footer {
+    position: relative;
+    z-index: 1;
   }
 
   header.brand {
     background: linear-gradient(135deg, #0b3d91 0%, #123a70 55%, #081f45 100%);
     color: #fff;
-    padding: 48px 24px 40px;
+    padding: 40px 24px 34px;
     text-align: center;
   }
 
-  header.brand .logo {
-    font-size: 2.4rem;
+  header.brand .logo-mark {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 2px solid rgba(201, 162, 74, 0.6);
+  }
+
+  header.brand .logo-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  header.brand .logo-mark .fallback-mark {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #c9a24a;
+  }
+
+  header.brand .logo-text {
+    font-size: 2.1rem;
     font-weight: 700;
     letter-spacing: 2px;
     margin: 0;
   }
 
-  header.brand .logo span { color: #7fc4ff; }
+  header.brand .logo-text span { color: #c9a24a; }
 
   header.brand .tagline {
-    margin-top: 8px;
+    margin-top: 6px;
     font-size: 1rem;
     font-weight: 300;
     color: #d7e6ff;
@@ -51,13 +114,13 @@
   }
 
   header.brand .legal {
-    margin-top: 18px;
+    margin-top: 16px;
     font-size: 0.78rem;
     color: #9fb8e0;
   }
 
   main {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 40px 24px 80px;
   }
@@ -81,7 +144,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 28px;
   }
 
@@ -101,14 +164,17 @@
     box-shadow: 0 12px 28px rgba(20, 30, 60, 0.12);
   }
 
+  /* Caixa de imagem quadrada (1:1) para casar com fotos exportadas em 1080x1080 */
   .card .img-box {
     background: var(--img-box);
-    height: 260px;
+    aspect-ratio: 1 / 1;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 16px;
     border-bottom: 1px solid var(--border);
+    position: relative;
   }
 
   .card .img-box img {
@@ -126,10 +192,11 @@
     flex-direction: column;
     gap: 8px;
     color: #b9c2d1;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     text-align: center;
     border: 1px dashed #cfd6e2;
     border-radius: 10px;
+    padding: 12px;
   }
 
   .card .body {
@@ -140,28 +207,48 @@
   }
 
   .card .category {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--accent-2);
-    font-weight: 600;
+    color: var(--accent);
+    font-weight: 700;
     margin-bottom: 6px;
   }
 
   .card h3 {
-    margin: 0 0 6px;
-    font-size: 1.15rem;
+    margin: 0 0 4px;
+    font-size: 1.1rem;
     color: var(--text);
+    line-height: 1.25;
   }
 
   .card .subtitle {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--muted);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+  }
+
+  .card .composition {
+    font-size: 0.78rem;
+    color: #4a536b;
+    background: #f2f5fa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+  }
+
+  .card .composition strong {
+    display: block;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin-bottom: 3px;
   }
 
   .card .desc {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     color: #3a4356;
     line-height: 1.5;
     margin-bottom: 14px;
@@ -195,8 +282,15 @@
 </head>
 <body>
 
+<div class="watermark" id="watermark">
+  <span class="fallback">REALMED</span>
+</div>
+
 <header class="brand">
-  <p class="logo">REAL<span>MED</span></p>
+  <div class="logo-mark" id="logo-mark">
+    <span class="fallback-mark">R</span>
+  </div>
+  <p class="logo-text">REAL<span>MED</span></p>
   <p class="tagline">Suplementos alimentares de alta performance</p>
   <p class="legal">Realmed Distribuidora e Comercial Online Ltda &nbsp;|&nbsp; CNPJ 50.689.350/0001-85</p>
 </header>
@@ -204,7 +298,7 @@
 <main>
   <div class="catalog-title">
     <h2>Catálogo de Produtos</h2>
-    <p>Linha completa de suplementos em cápsulas — qualidade e originalidade em cada rótulo.</p>
+    <p>Linha completa de suplementos em cápsulas — ficha técnica de cada produto, com fotos em formato 1080 × 1080 px.</p>
   </div>
 
   <div class="grid" id="grid"></div>
@@ -212,38 +306,35 @@
 
 <footer>
   <p><strong>Realmed Distribuidora e Comercial Online Ltda</strong> — CNPJ 50.689.350/0001-85</p>
-  <p>Catálogo gerado para uso comercial. Consulte um profissional de saúde antes do consumo de qualquer suplemento.</p>
+  <p>Catálogo gerado para uso comercial. Informações nutricionais de caráter geral — consulte um profissional de saúde antes do consumo de qualquer suplemento.</p>
 </footer>
 
 <script>
-  // Cada produto referencia uma imagem em assets/products/<arquivo>.
-  // Basta colocar a foto real do rótulo nesse caminho que ela substitui
-  // automaticamente o placeholder tracejado, sem precisar mexer no layout.
+  // Logo da marca: usada como marca d'água de fundo e no selo do cabeçalho.
+  // Coloque o arquivo real em assets/branding/logo.png — enquanto ele não
+  // existir, os elementos caem automaticamente para o texto "REALMED" / "R".
+  const LOGO_PATH = "assets/branding/logo.png";
+
+  (function loadLogo() {
+    const test = new Image();
+    test.onload = () => {
+      document.getElementById("watermark").innerHTML = `<img src="${LOGO_PATH}" alt="Marca d'água Realmed">`;
+      document.getElementById("logo-mark").innerHTML = `<img src="${LOGO_PATH}" alt="Logo Realmed">`;
+    };
+    test.src = LOGO_PATH;
+  })();
+
+  // Cada produto referencia uma foto quadrada (1080x1080 px) em assets/products/<arquivo>.
+  // Basta colocar o arquivo real nesse caminho que ele substitui automaticamente
+  // o placeholder tracejado, sem precisar mexer no layout.
   const products = [
     {
-      image: "assets/products/mag-6.jpg",
+      image: "assets/products/6-magnesios.jpg",
       category: "Mineral | Magnésio",
-      name: "MAG-6",
-      subtitle: "6 Magnésios combinados",
-      description: "Suplemento alimentar com seis fontes distintas de magnésio, formulado para melhor absorção e suporte à função muscular, nervosa e ao equilíbrio eletrolítico do organismo.",
-      contains: "60 cápsulas",
-      dose: "500 mg"
-    },
-    {
-      image: "assets/products/oleo-abobora.jpg",
-      category: "Óleo Vegetal",
-      name: "Óleo de Semente de Abóbora",
-      subtitle: "Extraído a frio",
-      description: "Rico em ácidos graxos essenciais, zinco e antioxidantes naturais, contribuindo para a saúde da próstata, do trato urinário e do equilíbrio hormonal.",
-      contains: "60 cápsulas",
-      dose: "1 g"
-    },
-    {
-      image: "assets/products/oleo-alho.jpg",
-      category: "Óleo Vegetal",
-      name: "Óleo de Alho",
-      subtitle: "Concentrado natural",
-      description: "Concentrado de alho em cápsulas, tradicionalmente utilizado para apoiar a saúde cardiovascular e o sistema imunológico, sem o odor característico do alho in natura.",
+      name: "6-Magnésios",
+      subtitle: "Seis fontes de magnésio combinadas",
+      composition: "Óxido, citrato, malato, bisglicinato, taurato e cloreto de magnésio.",
+      description: "Combina seis formas distintas de magnésio para ampliar a absorção e sustentar níveis estáveis do mineral, com papel no relaxamento muscular, no equilíbrio do sistema nervoso, na qualidade do sono e na produção de energia celular.",
       contains: "60 cápsulas",
       dose: "500 mg"
     },
@@ -252,16 +343,148 @@
       category: "Vitamina",
       name: "Vitamina B12",
       subtitle: "Metilcobalamina — 414% VD",
-      description: "Forma ativa de vitamina B12 (metilcobalamina), essencial para a produção de energia, a saúde neurológica e a formação de glóbulos vermelhos.",
+      composition: "Metilcobalamina (forma ativa da vitamina B12).",
+      description: "Forma ativa e bioidisponível da vitamina B12, essencial para a produção de energia, a manutenção do sistema nervoso e a formação de glóbulos vermelhos — indicada especialmente para dietas com baixo consumo de proteína animal.",
       contains: "60 cápsulas",
       dose: "350 mg"
     },
     {
+      image: "assets/products/oleo-abobora.jpg",
+      category: "Óleo Vegetal",
+      name: "Óleo de Semente de Abóbora",
+      subtitle: "Extraído a frio",
+      composition: "Óleo de semente de abóbora (Cucurbita pepo) prensado a frio.",
+      description: "Fonte natural de ácidos graxos essenciais, zinco, fitoesteróis e antioxidantes, tradicionalmente associada à saúde da próstata e do trato urinário masculino, além de contribuir para o equilíbrio hormonal.",
+      contains: "60 cápsulas",
+      dose: "1 g"
+    },
+    {
+      image: "assets/products/oleo-alho.jpg",
+      category: "Óleo Vegetal",
+      name: "Óleo de Alho",
+      subtitle: "Concentrado natural",
+      composition: "Óleo concentrado de alho (Allium sativum).",
+      description: "Concentrado de alho rico em compostos sulfurados (como a alicina), tradicionalmente utilizado para apoiar a saúde cardiovascular, a circulação e o sistema imunológico — sem o odor característico do alho in natura.",
+      contains: "60 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/resveratrol.jpg",
+      category: "Antioxidante",
+      name: "Resveratrol",
+      subtitle: "Polifenol antioxidante",
+      composition: "Extrato padronizado de resveratrol.",
+      description: "Polifenol encontrado naturalmente na casca da uva, com forte ação antioxidante — associado à proteção celular contra o estresse oxidativo e ao suporte à saúde cardiovascular e ao envelhecimento saudável.",
+      contains: "60 cápsulas",
+      dose: "1 g"
+    },
+    {
+      image: "assets/products/omega-3.jpg",
+      category: "Ácido Graxo Essencial",
+      name: "Ômega 3",
+      subtitle: "660 mg EPA · 360 mg DHA",
+      composition: "Óleo de peixe concentrado — 660 mg EPA e 360 mg DHA por dose.",
+      description: "Concentrado de ácidos graxos ômega 3 (EPA e DHA), nutrientes essenciais que o organismo não produz sozinho, com papel reconhecido na saúde cardiovascular, na função cognitiva e na modulação de processos inflamatórios.",
+      contains: "60 cápsulas",
+      dose: "1 g"
+    },
+    {
+      image: "assets/products/colageno-tipo-2.jpg",
+      category: "Colágeno",
+      name: "Colágeno Tipo 2",
+      subtitle: "Colágeno não desnaturado (UC-II)",
+      composition: "Colágeno tipo 2 não desnaturado.",
+      description: "Forma específica de colágeno voltada à cartilagem articular, atuando em baixíssimas doses para apoiar a mobilidade, a flexibilidade e a saúde das articulações — diferente do colágeno tipo 1, focado em pele e cabelo.",
+      contains: "60 cápsulas",
+      dose: "80 mg"
+    },
+    {
+      image: "assets/products/maca-peruana.jpg",
+      category: "Adaptógeno",
+      name: "Maca Peruana",
+      subtitle: "Extrato natural andino",
+      composition: "Extrato de raiz de maca peruana (Lepidium meyenii).",
+      description: "Raiz andina adaptógena tradicionalmente utilizada para apoiar a disposição física e mental, a energia, o equilíbrio hormonal e a libido, sendo uma das plantas mais estudadas para performance e vitalidade.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/maca-negra.jpg",
+      category: "Adaptógeno",
+      name: "Maca Negra",
+      subtitle: "Variedade andina de alta potência",
+      composition: "Extrato de raiz de maca negra (Lepidium meyenii, variedade negra).",
+      description: "Variedade mais concentrada da maca andina, tradicionalmente associada ao suporte da fertilidade, energia e desempenho físico masculino, com uso reconhecido em protocolos de vitalidade e resistência.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/maca-peruana-creatina.jpg",
+      category: "Adaptógeno + Performance",
+      name: "Maca Peruana + Creatina",
+      subtitle: "Energia e performance combinadas",
+      composition: "Extrato de maca peruana e creatina monoidratada.",
+      description: "União do suporte energético e hormonal da maca peruana com a creatina, composto amplamente estudado para o ganho de força, potência muscular e recuperação — indicada para quem busca disposição no dia a dia e no treino.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    },
+    {
       image: "assets/products/carvao-beterraba.jpg",
-      category: "Detox | Extrato Seco",
-      name: "Carvão Vegetal Ativado + Beterraba",
-      subtitle: "Extrato seco",
-      description: "Combinação de carvão vegetal ativado com extrato seco de beterraba, formulada para apoiar processos de desintoxicação natural e o bem-estar digestivo.",
+      category: "Detox",
+      name: "Carvão Ativado Vegetal + Beterraba",
+      subtitle: "Extrato seco de beterraba",
+      composition: "Carvão ativado vegetal e extrato seco de beterraba (Beta vulgaris).",
+      description: "Combinação do poder adsorvente do carvão ativado vegetal com os antioxidantes e nitratos naturais da beterraba, apoiando processos de desintoxicação, o conforto digestivo e a disposição física.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/feno-grego.jpg",
+      category: "Fitoterápico",
+      name: "Feno Grego",
+      subtitle: "Extrato tradicional",
+      composition: "Extrato de sementes de feno-grego (Trigonella foenum-graecum).",
+      description: "Planta tradicionalmente utilizada para apoiar o equilíbrio da glicemia, o metabolismo, o apetite e o desempenho hormonal masculino, sendo uma das fontes vegetais mais reconhecidas para suporte à testosterona natural.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/feno-grego-creatina.jpg",
+      category: "Fitoterápico + Performance",
+      name: "Feno Grego + Creatina",
+      subtitle: "Suporte hormonal e força",
+      composition: "Extrato de feno-grego e creatina monoidratada.",
+      description: "Combina o suporte metabólico e hormonal do feno-grego com a creatina, ingrediente consagrado para força, potência e recuperação muscular — voltado a quem busca performance física com base natural.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/psyllium-creatina.jpg",
+      category: "Fibra + Performance",
+      name: "Psyllium + Creatina",
+      subtitle: "Digestão e desempenho físico",
+      composition: "Casca de psyllium (Plantago ovata) e creatina monoidratada.",
+      description: "Une a fibra solúvel do psyllium — que favorece a saciedade, o trânsito intestinal e o controle glicêmico — à creatina, para apoiar simultaneamente a saúde digestiva e o ganho de força e desempenho muscular.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/maxtesto.jpg",
+      category: "Fórmula Masculina",
+      name: "Maxtesto",
+      subtitle: "Fórmula de suporte à vitalidade masculina",
+      composition: "200 mg Maca Negra · 200 mg Ashwagandha · 100 mg Tribulus Terrestris.",
+      description: "Fórmula exclusiva que reúne maca negra, ashwagandha e tribulus terrestris — três dos adaptógenos mais estudados para energia, libido, resistência ao estresse e suporte à testosterona natural no público masculino.",
+      contains: "120 cápsulas",
+      dose: "500 mg"
+    },
+    {
+      image: "assets/products/powerfemme.jpg",
+      category: "Fórmula Feminina",
+      name: "PowerFemme",
+      subtitle: "Fórmula de energia e performance feminina",
+      composition: "200 mg Maca Vermelha · 200 mg Creatina · 100 mg Tribulus Terrestris.",
+      description: "Fórmula exclusiva desenvolvida para o público feminino, combinando maca vermelha, creatina e tribulus terrestris para apoiar a energia, a disposição, o desempenho físico e o equilíbrio hormonal.",
       contains: "120 cápsulas",
       dose: "500 mg"
     }
@@ -277,13 +500,14 @@
         <img src="${p.image}" alt="${p.name}"
              onerror="this.replaceWith(Object.assign(document.createElement('div'), {
                 className: 'placeholder',
-                innerHTML: '<span>📦</span><span>Imagem em breve<br>${p.image}</span>'
+                innerHTML: '<span>📦 1080×1080</span><span>${p.image}</span>'
              }))">
       </div>
       <div class="body">
         <div class="category">${p.category}</div>
         <h3>${p.name}</h3>
         <div class="subtitle">${p.subtitle}</div>
+        ${p.composition ? `<div class="composition"><strong>Composição</strong>${p.composition}</div>` : ""}
         <div class="desc">${p.description}</div>
         <div class="specs">
           <span>Contém: <strong>${p.contains}</strong></span>
