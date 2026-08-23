@@ -179,6 +179,9 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
   }
 
   .card:hover {
@@ -300,6 +303,47 @@
   }
 
   footer strong { color: var(--text); }
+
+  /* Impressão / PDF: garante que a foto e a ficha técnica de cada produto
+     nunca fiquem separadas em páginas diferentes. */
+  @media print {
+    @page {
+      margin: 14mm 10mm;
+    }
+
+    .watermark {
+      position: absolute;
+    }
+
+    header.brand {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .catalog-title {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      box-shadow: none;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .card:hover {
+      transform: none;
+    }
+
+    footer {
+      break-before: avoid;
+    }
+  }
 </style>
 </head>
 <body>
