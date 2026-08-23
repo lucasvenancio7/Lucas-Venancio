@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Realmed | Catálogo de Produtos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Segoe+UI&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f4f6f9;
@@ -11,6 +14,10 @@
     --border: #e2e6ec;
     --text: #1a2233;
     --muted: #5b6478;
+    --navy: #0b1f45;
+    --navy-2: #123a70;
+    --gold: #c9a24a;
+    --gold-light: #e6c877;
     --accent: #0b3d91;
     --accent-2: #c9a24a;
     --shadow: 0 6px 20px rgba(20, 30, 60, 0.07);
@@ -51,11 +58,12 @@
   }
 
   .watermark .fallback {
-    font-size: 14vw;
-    font-weight: 800;
-    letter-spacing: 6px;
-    color: var(--accent);
-    opacity: 0.045;
+    font-family: "Cinzel", "Segoe UI", serif;
+    font-size: 13vw;
+    font-weight: 700;
+    letter-spacing: 10px;
+    color: var(--navy);
+    opacity: 0.05;
     white-space: nowrap;
   }
 
@@ -65,23 +73,24 @@
   }
 
   header.brand {
-    background: linear-gradient(135deg, #0b3d91 0%, #123a70 55%, #081f45 100%);
+    background: radial-gradient(120% 160% at 50% -20%, var(--navy-2) 0%, var(--navy) 55%, #060f28 100%);
     color: #fff;
-    padding: 40px 24px 34px;
+    padding: 44px 24px 36px;
     text-align: center;
   }
 
   header.brand .logo-mark {
-    width: 88px;
-    height: 88px;
-    margin: 0 auto 14px;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 16px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border: 2px solid rgba(201, 162, 74, 0.6);
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 0 4px rgba(201, 162, 74, 0.15), inset 0 0 14px rgba(201, 162, 74, 0.15);
   }
 
   header.brand .logo-mark img {
@@ -91,32 +100,44 @@
   }
 
   header.brand .logo-mark .fallback-mark {
-    font-size: 2.1rem;
+    font-family: "Cinzel", "Segoe UI", serif;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #c9a24a;
+    color: var(--gold-light);
   }
 
   header.brand .logo-text {
-    font-size: 2.1rem;
+    font-family: "Cinzel", "Segoe UI", serif;
+    font-size: 2.15rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     margin: 0;
+    color: var(--gold-light);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   }
 
-  header.brand .logo-text span { color: #c9a24a; }
+  header.brand .logo-text span { color: #fff; }
+
+  header.brand .rule {
+    width: 64px;
+    height: 2px;
+    margin: 10px auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
 
   header.brand .tagline {
-    margin-top: 6px;
-    font-size: 1rem;
+    margin-top: 10px;
+    font-size: 0.95rem;
     font-weight: 300;
-    color: #d7e6ff;
-    letter-spacing: 0.5px;
+    color: #cfe0ff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   header.brand .legal {
-    margin-top: 16px;
+    margin-top: 18px;
     font-size: 0.78rem;
-    color: #9fb8e0;
+    color: #8fa6cf;
   }
 
   main {
@@ -151,6 +172,7 @@
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
     border-radius: 14px;
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -290,7 +312,8 @@
   <div class="logo-mark" id="logo-mark">
     <span class="fallback-mark">R</span>
   </div>
-  <p class="logo-text">REAL<span>MED</span></p>
+  <p class="logo-text">REAL <span>MED</span></p>
+  <div class="rule"></div>
   <p class="tagline">Suplementos alimentares de alta performance</p>
   <p class="legal">Realmed Distribuidora e Comercial Online Ltda &nbsp;|&nbsp; CNPJ 50.689.350/0001-85</p>
 </header>
