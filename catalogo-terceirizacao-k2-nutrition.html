@@ -118,9 +118,49 @@
     article.product{break-inside:avoid;page-break-inside:avoid;box-shadow:none;}
     .cat-banner{break-after:avoid;}
   }
+
+  .pkg-icon{width:20px;height:28px;display:inline-block;vertical-align:middle;margin-right:7px;flex-shrink:0;}
+  .price-block h4{display:flex;align-items:center;color:var(--accent,var(--navy-2));}
+  .price-block h4 .pkg-icon{color:var(--accent,var(--navy-2));}
+  .pack-card h4{display:flex;align-items:center;gap:8px;color:var(--navy-2);}
+  .pack-card .pkg-icon{width:24px;height:34px;color:#245144;}
+  .pack-card .pkg-icon.icon-tampa-svg{width:30px;height:22px;}
 </style>
 </head>
 <body>
+
+<svg style="position:absolute;width:0;height:0" aria-hidden="true" focusable="false">
+<defs>
+<symbol id="icon-frasco" viewBox="0 0 40 56">
+  <rect x="12" y="4" width="16" height="9" rx="2" fill="currentColor"/>
+  <rect x="15" y="11" width="10" height="9" fill="currentColor" opacity="0.35"/>
+  <rect x="9" y="18" width="22" height="34" rx="6" fill="currentColor" opacity="0.16" stroke="currentColor" stroke-width="2"/>
+  <rect x="9" y="29" width="22" height="15" fill="currentColor" opacity="0.28"/>
+</symbol>
+<symbol id="icon-lata" viewBox="0 0 40 56">
+  <ellipse cx="20" cy="14" rx="14" ry="4.5" fill="currentColor" opacity="0.4" stroke="currentColor" stroke-width="2"/>
+  <rect x="6" y="14" width="28" height="36" rx="2" fill="currentColor" opacity="0.16" stroke="currentColor" stroke-width="2"/>
+  <rect x="6" y="25" width="28" height="10" fill="currentColor" opacity="0.28"/>
+  <ellipse cx="20" cy="50" rx="14" ry="3.5" fill="currentColor" opacity="0.16" stroke="currentColor" stroke-width="1.5"/>
+</symbol>
+<symbol id="icon-pouch" viewBox="0 0 40 56">
+  <rect x="16" y="3" width="8" height="6" rx="2" fill="currentColor"/>
+  <ellipse cx="20" cy="11" rx="11" ry="3.5" fill="currentColor" opacity="0.4" stroke="currentColor" stroke-width="2"/>
+  <rect x="9" y="11" width="22" height="41" rx="3" fill="currentColor" opacity="0.16" stroke="currentColor" stroke-width="2"/>
+  <rect x="9" y="26" width="22" height="8" fill="currentColor" opacity="0.28"/>
+  <ellipse cx="20" cy="52" rx="11" ry="3" fill="currentColor" opacity="0.16"/>
+</symbol>
+<symbol id="icon-pote" viewBox="0 0 40 56">
+  <rect x="2" y="9" width="36" height="12" rx="5" fill="currentColor" opacity="0.4" stroke="currentColor" stroke-width="2"/>
+  <rect x="5" y="19" width="30" height="31" rx="7" fill="currentColor" opacity="0.16" stroke="currentColor" stroke-width="2"/>
+  <rect x="5" y="31" width="30" height="11" fill="currentColor" opacity="0.28"/>
+</symbol>
+<symbol id="icon-tampa" viewBox="0 0 40 30">
+  <ellipse cx="20" cy="18" rx="17" ry="9" fill="currentColor" opacity="0.16" stroke="currentColor" stroke-width="2"/>
+  <ellipse cx="20" cy="13" rx="17" ry="9" fill="currentColor" opacity="0.4" stroke="currentColor" stroke-width="2"/>
+</symbol>
+</defs>
+</svg>
 
 <header class="cover">
   <div class="logo-mark"><span class="fallback-mark">K2</span></div>
@@ -172,6 +212,7 @@
       <tr><td>Silício (mg)</td><td>1,3</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$28,47</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$23,27</span><span class="tag">Rótulos não incluídos</span></div>
@@ -214,19 +255,19 @@
       <tr><td>Ácido Hialurônico (mg)</td><td>4</td><td>—</td></tr>
     </table>
     <div class="price-block">
-      <h4>Frasco</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$34,97</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$32,37</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$31,07</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Lata</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-lata"/></svg>Lata</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$40,17</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$37,57</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$36,27</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Pouch (Gummies)</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pouch"/></svg>Pouch (Gummies)</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$36,27</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
@@ -243,19 +284,19 @@
     </ul>
     <p class="nutri-note">Mesmo perfil nutricional por unidade da versão 60 Gomas (30 porções/embalagem).</p>
     <div class="price-block">
-      <h4>Frasco</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$23,27</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Lata</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-lata"/></svg>Lata</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$31,07</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$28,47</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Pouch (Gummies)</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pouch"/></svg>Pouch (Gummies)</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
@@ -285,14 +326,14 @@
       <tr><td>Peptídeos Bioativos de Colágeno hidrolisado (2 kDa) (g)</td><td>2,5</td><td>—</td></tr>
     </table>
     <div class="price-block">
-      <h4>Sabor Abacaxi com Hortelã</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sabor Abacaxi com Hortelã</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$58,37</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$50,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$49,27</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$46,67</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Sabor Blueberry</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sabor Blueberry</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$57,07</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$49,27</span><span class="tag">Rótulos não incluídos</span></div>
@@ -317,14 +358,14 @@
     </table>
     <p class="pack-note">*Pote Branco ou Preto com Tampa Branca ou Preta</p>
     <div class="price-block">
-      <h4>150 gramas</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>150 gramas</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$33,67</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$32,37</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$27,17</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>300 gramas</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>300 gramas</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$45,37</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$44,07</span><span class="tag">Rótulos não incluídos</span></div>
@@ -347,19 +388,19 @@
       <tr><td>Creatina (mg)</td><td>3000</td><td>—</td></tr>
     </table>
     <div class="price-block">
-      <h4>Frasco</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$36,27</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$33,67</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$31,07</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Lata</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-lata"/></svg>Lata</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$41,47</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$40,17</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$36,27</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Pouch (Gummies)</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pouch"/></svg>Pouch (Gummies)</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$36,27</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
@@ -385,14 +426,14 @@
       <tr><td>Taurina (mg)</td><td>1000</td><td>—</td></tr>
     </table>
     <div class="price-block">
-      <h4>Sabor Limão — 150 gramas</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sabor Limão — 150 gramas</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$36,27</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$28,47</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Sabor Limão — 300 gramas</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sabor Limão — 300 gramas</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$50,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$44,07</span><span class="tag">Rótulos não incluídos</span></div>
@@ -400,17 +441,17 @@
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$40,17</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
 
-      <h4>Sabor Maçã Verde — 150 g / 300 g</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sabor Maçã Verde — 150 g / 300 g</h4>
       <p class="nutri-note">Perfil nutricional equivalente ao sabor Limão (açúcares 2,4 g). Mesma tabela de preços: 150 g — R$36,27 / R$29,77 / R$28,47 / R$25,87 · 300 g — R$50,57 / R$44,07 / R$42,77 / R$40,17 (100/300/500/1000 un.).</p>
 
-      <h4>Sabor Blue Ice — 150 gramas</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sabor Blue Ice — 150 gramas</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$40,17</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$33,67</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$32,37</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Sabor Blue Ice — 300 gramas</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sabor Blue Ice — 300 gramas</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$54,47</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$47,97</span><span class="tag">Rótulos não incluídos</span></div>
@@ -418,10 +459,10 @@
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$44,07</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
 
-      <h4>Sabor Pink Lemonade / Frutas Vermelhas — 150 g e 300 g</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sabor Pink Lemonade / Frutas Vermelhas — 150 g e 300 g</h4>
       <p class="nutri-note">Perfil nutricional próprio (açúcares 2,4 g). Mesma tabela de preços de Blue Ice: 150 g — R$40,17 / R$33,67 / R$32,37 / R$29,77 · 300 g — R$54,47 / R$47,97 / R$46,67 / R$44,07 (100/300/500/1000 un.).</p>
 
-      <h4>Sem Cafeína — sabores Frutas Vermelhas e Pink Limonade — 150 g e 300 g</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Sem Cafeína — sabores Frutas Vermelhas e Pink Limonade — 150 g e 300 g</h4>
       <p class="nutri-note">Mesma tabela de preços: 150 g — R$40,17 / R$33,67 / R$32,37 / R$29,77 · 300 g — R$54,47 / R$47,97 / R$46,67 / R$44,07 (100/300/500/1000 un.).</p>
     </div>
   </article>
@@ -444,7 +485,7 @@
     </table>
     <p class="pack-note">*Pote Branco ou Preto com Tampa Branca ou Preta</p>
     <div class="price-block">
-      <h4>Pote</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Pote</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$28,47</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos de brinde!</span></div>
@@ -467,6 +508,7 @@
       <tr><td>Cafeína (mg)</td><td>200</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$19,37</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$16,77</span><span class="tag">Rótulos de brinde!</span></div>
@@ -491,6 +533,7 @@
       <tr><td>Magnésio (mg)</td><td>260</td><td>62</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$23,27</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -512,6 +555,7 @@
       <tr><td>Coenzima Q10 (mg)</td><td>100</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$32,37</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos não incluídos</span></div>
@@ -538,6 +582,7 @@
       <tr><td>Magnésio (mg)</td><td>304</td><td>72</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -562,7 +607,7 @@
       <tr><td>Triptofano (mg)</td><td>100</td><td>—</td></tr>
     </table>
     <div class="price-block">
-      <h4>Cápsulas</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Cápsulas</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -583,35 +628,35 @@
       <tr><td>Melatonina (mg)</td><td>0,21</td><td>—</td></tr>
     </table>
     <div class="price-block">
-      <h4>30 Gomas — Frasco</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>30 Gomas — Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$23,27</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>30 Gomas — Lata</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-lata"/></svg>30 Gomas — Lata</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$31,07</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$28,47</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>30 Gomas — Pouch</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pouch"/></svg>30 Gomas — Pouch</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>60 Gomas — Frasco</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>60 Gomas — Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$34,97</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$32,37</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$31,07</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>60 Gomas — Lata</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-lata"/></svg>60 Gomas — Lata</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$40,17</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$37,57</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$36,27</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>60 Gomas — Pouch</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pouch"/></svg>60 Gomas — Pouch</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$36,27</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
@@ -636,6 +681,7 @@
       <tr><td>Magnésio (mg)</td><td>350</td><td>83</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$23,27</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -662,6 +708,7 @@
       <tr><td>Vitamina B12 (µg)</td><td>9,94</td><td>414</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$19,37</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$16,77</span><span class="tag">Rótulos de brinde!</span></div>
@@ -697,6 +744,7 @@
       <tr><td>Compostos Fenólicos (mg)</td><td>10</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -727,6 +775,7 @@
       <tr><td>Vitamina E (mg)</td><td>10</td><td>67</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$31,07</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$28,47</span><span class="tag">Rótulos não incluídos</span></div>
@@ -753,6 +802,7 @@
       <tr><td>Curcuminas (mg)</td><td>100</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$18,07</span><span class="tag">Rótulos não incluídos</span></div>
@@ -779,6 +829,7 @@
       <tr><td>L-Cisteína (mg)</td><td>600</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$21,97</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -816,6 +867,7 @@
       <tr><td>DHA (mg)</td><td>360</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$47,97</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$45,37</span><span class="tag">Rótulos não incluídos</span></div>
@@ -829,6 +881,7 @@
     <h3>Ômega 3 — 240 Cápsulas</h3>
     <p class="nutri-note">Mesma fórmula da versão de 120 cápsulas (80 porções/embalagem).</p>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$84,37</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$81,77</span><span class="tag">Rótulos não incluídos</span></div>
@@ -857,6 +910,7 @@
       <tr><td>Vitamina E (mg)</td><td>22,5</td><td>150</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$55,77</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$51,87</span><span class="tag">Rótulos não incluídos</span></div>
@@ -884,6 +938,7 @@
       <tr><td>DHA (mg)</td><td>1500</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$68,77</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$64,87</span><span class="tag">Rótulos não incluídos</span></div>
@@ -910,6 +965,7 @@
       <tr><td>Complexo B, Cobre, Cromo, Ferro, Iodo, Manganês, Selênio, Zinco</td><td>—</td><td>22–100</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$28,47</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
@@ -936,6 +992,7 @@
       <tr><td>Cafeína (mg)</td><td>75</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -951,6 +1008,7 @@
     <div class="meta-row"><span class="meta-pill">Cápsula: <strong>Rosa</strong></span></div>
     <p class="nutri-note">Complexo multivitamínico-mineral (porção 0,49 g / 1 cápsula · 60 porções) com perfil equivalente ao Super AZ Homem, ajustado para o público feminino.</p>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -966,6 +1024,7 @@
     <div class="meta-row"><span class="meta-pill">Cápsula: <strong>Branca</strong></span></div>
     <p class="nutri-note">Porção 1,08 g (2 cápsulas) · 30 porções — inclui Cálcio 180 mg (18% VD) além do complexo multivitamínico-mineral completo (Vitaminas A, D, E, K, C, complexo B, Cobre, Cromo, Ferro, Iodo, Magnésio, Manganês, Molibdênio, Selênio, Zinco).</p>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -987,6 +1046,7 @@
       <tr><td>DHA — Ácido Docosahexaenóico (mg)</td><td>100</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$27,17</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1021,6 +1081,7 @@
       <tr><td>Ácido Clorogênico (mg)</td><td>50</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$27,17</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$24,18</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1040,6 +1101,7 @@
       <tr><td>Antocianinas da Laranja Moro (mg)</td><td>5</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$20,67</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1071,6 +1133,7 @@
       <tr><td>Antocianinas (mg)</td><td>5</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$32,37</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1102,6 +1165,7 @@
       <tr><td>Ácido Clorogênico (mg)</td><td>50</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$26,78</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1117,6 +1181,7 @@
     <p style="font-size:.9rem;color:#33403c;"><strong>Ingredientes:</strong> Chá Verde (Camellia sinensis L. Kuntze folhas e talos), Chá Branco (Camellia sinensis L. Kuntze folhas e talos), Hibisco (Hibiscus Sabdariffa L. flores), Gengibre (Zingiber Officinale Roscoe rizomas), Aroma Sintético Idêntico ao Natural de Limão.</p>
     <p class="pack-note">250 gramas · *Pote Branco ou Preto com Tampa Branca ou Preta</p>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Pote</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$42,77</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$40,17</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1147,6 +1212,7 @@
       <tr><td>Metilsulfonilmetano — MSM (mg)</td><td>200</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$27,17</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$23,27</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1176,6 +1242,7 @@
       <tr><td>Colágeno Tipo II Não Desnaturado (mg)</td><td>4</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$27,17</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$23,27</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1206,6 +1273,7 @@
       <tr><td>Magnésio (mg)</td><td>70</td><td>17</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$25,87</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$21,97</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1239,19 +1307,19 @@
       <tr><td>Complexo B (B1, B2, Niacina, B5, B6, Biotina, Ác. Fólico, B12)</td><td>48–367</td><td>48–169</td></tr>
     </table>
     <div class="price-block">
-      <h4>Frasco</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$45,37</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$42,77</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$40,17</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Lata</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-lata"/></svg>Lata</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$50,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$47,97</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$45,37</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Pouch (Gummies Multivitamínico)</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pouch"/></svg>Pouch (Gummies Multivitamínico)</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$47,97</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
@@ -1263,19 +1331,19 @@
     <p class="subtitle">Sabor sortido de Frutas Vermelhas e Tangerina · Recomendação: 02 unidades ao dia</p>
     <p class="nutri-note">Mesmo perfil nutricional por unidade da versão 60 Gomas (15 porções/embalagem).</p>
     <div class="price-block">
-      <h4>Frasco</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$27,17</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$24,57</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Lata</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-lata"/></svg>Lata</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">200 un.</span><span class="val">R$34,97</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier brinde"><span class="qty">500 un.</span><span class="val">R$32,37</span><span class="tag">Rótulos de brinde!</span></div>
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
-      <h4>Pouch (Gummies Multivitamínico)</h4>
+      <h4><svg class="pkg-icon"><use href="#icon-pouch"/></svg>Pouch (Gummies Multivitamínico)</h4>
       <div class="price-grid">
         <div class="tier brinde"><span class="qty">1000 un.</span><span class="val">R$29,77</span><span class="tag">Rótulos de brinde!</span></div>
       </div>
@@ -1298,6 +1366,7 @@
       <tr><td>DHA (mg)</td><td>30</td><td>240</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$37,57</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$34,58</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1336,6 +1405,7 @@
       <tr><td>Boro (mg)</td><td>8,8</td><td>—</td></tr>
     </table>
     <div class="price-block">
+      <h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco</h4>
       <div class="price-grid">
         <div class="tier"><span class="qty">100 un.</span><span class="val">R$26,39</span><span class="tag">Rótulos não incluídos</span></div>
         <div class="tier"><span class="qty">300 un.</span><span class="val">R$25,16</span><span class="tag">Rótulos não incluídos</span></div>
@@ -1353,30 +1423,30 @@
 
   <h3 style="color:var(--navy-2);margin:22px 0 10px;">Modelos de Frascos</h3>
   <div class="pack-grid">
-    <div class="pack-card"><h4>Frasco R170</h4><div class="colors">Azul | Branco | Incolor | Preto</div></div>
-    <div class="pack-card"><h4>Frasco R350</h4><div class="colors">Branco | Preto | Incolor</div></div>
-    <div class="pack-card"><h4>Frasco R170 Reto</h4><div class="colors">Incolor</div></div>
-    <div class="pack-card"><h4>Frasco R38100</h4><div class="colors">Incolor</div></div>
-    <div class="pack-card"><h4>Frasco R220 Reto</h4><div class="colors">Branco | Preto | Incolor</div></div>
-    <div class="pack-card"><h4>Frasco R650</h4><div class="colors">Branco | Preto | Incolor</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco R170</h4><div class="colors">Azul | Branco | Incolor | Preto</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco R350</h4><div class="colors">Branco | Preto | Incolor</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco R170 Reto</h4><div class="colors">Incolor</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco R38100</h4><div class="colors">Incolor</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco R220 Reto</h4><div class="colors">Branco | Preto | Incolor</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-frasco"/></svg>Frasco R650</h4><div class="colors">Branco | Preto | Incolor</div></div>
   </div>
 
   <h3 style="color:var(--navy-2);margin:26px 0 10px;">Modelos de Potes e Lata</h3>
   <div class="pack-grid">
-    <div class="pack-card"><h4>Pote HP700</h4><div class="colors">Branco | Preto</div></div>
-    <div class="pack-card"><h4>Pote HP500</h4><div class="colors">Branco | Preto</div></div>
-    <div class="pack-card"><h4>Lata</h4><div class="colors">Prata</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Pote HP700</h4><div class="colors">Branco | Preto</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-pote"/></svg>Pote HP500</h4><div class="colors">Branco | Preto</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon"><use href="#icon-lata"/></svg>Lata</h4><div class="colors">Prata</div></div>
   </div>
 
   <h3 style="color:var(--navy-2);margin:26px 0 10px;">Modelos de Tampas</h3>
   <div class="pack-grid">
-    <div class="pack-card"><h4>Child 45</h4><div class="colors">Azul | Branca | Dourada | Preta</div></div>
-    <div class="pack-card"><h4>Flip Top 3843</h4><div class="colors">Branca | Lilás</div></div>
-    <div class="pack-card"><h4>Master 45</h4><div class="colors">Azul | Branca | Laranja | Preta | Rosa</div></div>
-    <div class="pack-card"><h4>Tampa Pote HP700</h4><div class="colors">Branca | Preta</div></div>
-    <div class="pack-card"><h4>Tampa Pote HP500</h4><div class="colors">Branca | Preta</div></div>
-    <div class="pack-card"><h4>Flip Top 45</h4><div class="colors">Branca | Dourada | Laranja | Prata | Preta | Rosa | Verde | Vermelha</div></div>
-    <div class="pack-card"><h4>Tampa Lata</h4><div class="colors">Branca | Preta</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon icon-tampa-svg"><use href="#icon-tampa"/></svg>Child 45</h4><div class="colors">Azul | Branca | Dourada | Preta</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon icon-tampa-svg"><use href="#icon-tampa"/></svg>Flip Top 3843</h4><div class="colors">Branca | Lilás</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon icon-tampa-svg"><use href="#icon-tampa"/></svg>Master 45</h4><div class="colors">Azul | Branca | Laranja | Preta | Rosa</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon icon-tampa-svg"><use href="#icon-tampa"/></svg>Tampa Pote HP700</h4><div class="colors">Branca | Preta</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon icon-tampa-svg"><use href="#icon-tampa"/></svg>Tampa Pote HP500</h4><div class="colors">Branca | Preta</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon icon-tampa-svg"><use href="#icon-tampa"/></svg>Flip Top 45</h4><div class="colors">Branca | Dourada | Laranja | Prata | Preta | Rosa | Verde | Vermelha</div></div>
+    <div class="pack-card"><h4><svg class="pkg-icon icon-tampa-svg"><use href="#icon-tampa"/></svg>Tampa Lata</h4><div class="colors">Branca | Preta</div></div>
   </div>
 
   <h3 style="color:var(--navy-2);margin:26px 0 10px;">Valor dos Rótulos</h3>
