@@ -70,8 +70,10 @@ Coloque a foto correspondente (1080×1080 px) em `assets/products/` com o mesmo 
 
 ## Catálogo de Terceirização K2 Nutrition
 
-Catálogo de terceirização de suplementos em página única (`catalogo-terceirizacao-k2-nutrition.html`) para a **K2 Nutrition Inteligência em Saúde Ltda** (CNPJ 23.855.514/0001-24).
+`catalogo-terceirizacao-k2-nutrition.pdf` é o catálogo de terceirização de suplementos original (62 páginas), editado diretamente para a **K2 Nutrition Inteligência em Saúde Ltda** (CNPJ 23.855.514/0001-24).
 
-Reúne todo o portfólio de produtos (linhas Cabelo/Pele/Unhas, Colágeno, Performance e Energia, Saúde e Bem-estar, Imunidade, Ômega 3, Super AZ, Metabolismo, Ossos e Articulações, Linha KIDS e Estimulante), com composição, informação nutricional, opções de cápsula/embalagem e as tabelas de preço por faixa de quantidade — todos os valores já reajustados em +30% sobre a referência original de terceirização. Inclui também os modelos de frascos, potes, latas e tampas disponíveis e a tabela de valor dos rótulos.
+O arte-final, o layout, as fotos de produto, as tabelas de informação nutricional e todo o texto técnico foram mantidos exatamente como no catálogo original — apenas duas coisas foram alteradas:
+- a marca da terceirizadora (logo e menções no texto) foi substituída por K2 Nutrition, com CNPJ e razão social incluídos na capa;
+- todos os valores de terceirização (produtos, rótulos e desenvolvimento de arte) foram reajustados em +30%.
 
-Abra o arquivo `catalogo-terceirizacao-k2-nutrition.html` diretamente no navegador para visualizar.
+É um PDF pronto para uso comercial — não há HTML equivalente, pois o documento é o próprio PDF original editado.
