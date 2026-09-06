@@ -1,4 +1,8 @@
-# Catálogo Realmed
+# Catálogos
+
+Este repositório reúne catálogos em página única (HTML, abertos direto no navegador).
+
+## Catálogo Realmed
 
 Catálogo de produtos em página única (`catalog.html`) para a **Realmed Distribuidora e Comercial Online Ltda** (CNPJ 50.689.350/0001-85).
 
@@ -63,3 +67,11 @@ No arquivo `catalog.html`, dentro do array `products` (bloco `<script>`), adicio
 ```
 
 Coloque a foto correspondente (1080×1080 px) em `assets/products/` com o mesmo nome usado em `image`. O layout do cartão (tamanho da imagem, tipografia, espaçamento, marca d'água) é aplicado automaticamente e permanece simétrico entre todos os produtos.
+
+## Catálogo de Terceirização K2 Nutrition
+
+Catálogo de terceirização de suplementos em página única (`catalogo-terceirizacao-k2-nutrition.html`) para a **K2 Nutrition Inteligência em Saúde Ltda** (CNPJ 23.855.514/0001-24).
+
+Reúne todo o portfólio de produtos (linhas Cabelo/Pele/Unhas, Colágeno, Performance e Energia, Saúde e Bem-estar, Imunidade, Ômega 3, Super AZ, Metabolismo, Ossos e Articulações, Linha KIDS e Estimulante), com composição, informação nutricional, opções de cápsula/embalagem e as tabelas de preço por faixa de quantidade — todos os valores já reajustados em +30% sobre a referência original de terceirização. Inclui também os modelos de frascos, potes, latas e tampas disponíveis e a tabela de valor dos rótulos.
+
+Abra o arquivo `catalogo-terceirizacao-k2-nutrition.html` diretamente no navegador para visualizar.
